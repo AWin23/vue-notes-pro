@@ -41,6 +41,7 @@ function create_note () {
         id,
         title: 'Untitled',  // default title
         content: '',        // default content
+        tags: [] // Tag title
     });
 
     // Set the newly created note as the active one (for editing)

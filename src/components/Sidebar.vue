@@ -1,5 +1,13 @@
 <script setup>
-const props = defineProps(['active_note', 'notes']);
+import { computed } from 'vue';
+const props = defineProps(['active_note', 'notes', 'searchQuery']);
+
+// function that highlights the match 
+function highlightMatch(text) {
+  if (!props.searchQuery) return text
+  const regex = new RegExp(`(${props.searchQuery})`, 'gi')
+  return text.replace(regex, '<mark class="bg-yellow-300 text-black">$1</mark>')
+}
 </script>
 
 <template>
